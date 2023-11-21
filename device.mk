@@ -815,10 +815,6 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhwbinder
 
-# Shims
-PRODUCT_PACKAGES += \
-    lib-imsvtshim
-
 # Setting vendor SPL
 VENDOR_SECURITY_PATCH := "2020-10-05"
 
