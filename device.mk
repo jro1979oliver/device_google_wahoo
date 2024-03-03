@@ -89,13 +89,13 @@ else
 endif
 
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-  PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/init.hardware.diag.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).diag.rc
-  PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/init.hardware.chamber.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).chamber.rc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.hardware.diag.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).diag.rc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.hardware.chamber.rc.userdebug:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).chamber.rc
 else
-  PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/init.hardware.diag.rc.user:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).diag.rc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.hardware.diag.rc.user:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).diag.rc
 endif
 
 MSM_VIDC_TARGET_LIST := msm8998 # Get the color format from kernel headers
@@ -274,7 +274,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.zram_enabled=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.vendor.extension_library=libqti-perfd-client.so
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # settings to enable Device Orientation Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -301,14 +301,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # camera gyro and laser sensor
 PRODUCT_PROPERTY_OVERRIDES += \
-  persist.camera.gyro.android=20 \
-  persist.camera.tof.direct=1 \
-  persist.camera.max.previewfps=60 \
-  persist.camera.sensor.hdr=2
+    persist.camera.gyro.android=20 \
+    persist.camera.tof.direct=1 \
+    persist.camera.max.previewfps=60 \
+    persist.camera.sensor.hdr=2
 
 # camera TNR controls
 PRODUCT_PROPERTY_OVERRIDES += \
-  persist.camera.tnr.video=1 \
+    persist.camera.tnr.video=1 \
 
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
@@ -664,10 +664,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
-PRODUCT_COPY_FILES += \
-    device/google/wahoo/fstab.hardware:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(PRODUCT_HARDWARE) \
-    device/google/wahoo/fstab.hardware:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.$(PRODUCT_HARDWARE)
-
 # Use the default charger mode images
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -675,11 +671,11 @@ PRODUCT_PACKAGES += \
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 # b/36703476: Set default log size to 1M
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.logd.size=1M
+    ro.logd.size=1M
 # b/114766334: persist all logs by default rotating on 30 files of 1MiB
 PRODUCT_PROPERTY_OVERRIDES += \
-  logd.logpersistd=logcatd \
-  logd.logpersistd.size=30
+    logd.logpersistd=logcatd \
+    logd.logpersistd.size=30
 endif
 
 # Dumpstate HAL
@@ -752,13 +748,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # default usb oem functions
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-  PRODUCT_PROPERTY_OVERRIDES += \
-      persist.vendor.usb.usbradio.config=diag
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.usb.usbradio.config=diag
 endif
 
 # Vibrator HAL
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.vibrator.hal.closeloop.threshold=20
+    ro.vibrator.hal.closeloop.threshold=20
 
 # default atrace HAL
 PRODUCT_PACKAGES += \
