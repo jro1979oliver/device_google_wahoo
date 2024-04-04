@@ -1,0 +1,19 @@
+[
+  {
+    "repository": "kernel_google_wahoo",
+    "target_path": "kernel/google/wahoo",
+    "branch": "fourteen",
+  },
+  {
+    "repository": "vendor_google_wahoo-googlecamera",
+    "target_path": "packages/apps/GoogleCamera",
+    "branch": "fourteen",
+    "remote": "pixel-devices-blobs"
+  },
+  {
+    "repository": "vendor_google-extra",
+    "target_path": "vendor/google-extra",
+    "branch": "fourteen",
+    "remote": "pixel-devices-blobs"
+  }
+]

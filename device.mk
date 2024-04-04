@@ -830,3 +830,6 @@ include device/google/gs-common/thermal/thermal_hal/device.mk
 
 # power HAL
 -include hardware/google/pixel/power-libperfmgr/aidl/device.mk
+
+# Inherit extra stuff
+$(call inherit-product-if-exists,vendor/google-extra/config.mk)
